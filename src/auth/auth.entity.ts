@@ -1,13 +1,15 @@
 import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity()
-export class Task {
+export class Auth {
   @PrimaryGeneratedColumn('uuid')
   id: string;
   @Column()
-  title: string;
+  email: string;
   @Column()
-  description: string;
-  @Column()
-  status: string;
+  password: string;
+  @Column({
+    default: false,
+  })
+  isRestricted: boolean;
 }
